@@ -1,0 +1,676 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <title>JavaScript Examples</title>
+    <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+    <script src="Scripts/shBrushJScript.js"></script>
+    <link href="Styles/shThemeMidnight.css" rel="stylesheet" />
+    <link href="Styles/shCore.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Bryant Milliren</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://millirenb.azurewebsites.net/#services">Services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://millirenb.azurewebsites.net/#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://millirenb.azurewebsites.net/#team">Who I Am</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://millirenb.azurewebsites.net/#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="jsprobs.html">Javascript Exercises</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    
+    <script>
+        
+    </script>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+       Problem 1
+    </button>
+
+    <!-- Modal1 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Problem One - Max of Three</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-6">
+                            <br/>
+                            <br/>
+                            <p>This function takes 3 numbers and returns the highest value.</p>
+                            <br/>
+                            <br/>
+                            <p>Click the button to return the highest number of 5, 15, 10.</p>
+
+                            <button onclick="maxOfThree()">Click For Highest Value</button>
+                           
+                            <p id="max"></p>
+                    </div>
+                    <div class="col-md-6">
+                        <br/>
+                        <br/>
+                        <pre class="brush: js; ruler: true;">
+                    
+                function maxOfThree() {
+                     document.getElementById("max").innerHTML = Math.max(5, 10, 15);
+                
+
+                }
+
+
+
+
+                        </pre>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+        Problem 2
+    </button>
+
+    <!-- Modal2 -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Problem Two - Sum & Multiply An Array</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-6">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <p>These functions will take an array of numbers and sum / multiply the integers respectively.</p>
+                        <br />
+                        <br />
+                        <lable>Number 1:</lable><input type="text" id="problemTwoInput1" />
+                        <br/>
+                        <lable>Number 2:</lable><input type="text" id="problemTwoInput2" />
+                        <br/>
+                        <lable>Number 3:</lable><input type="text" id="problemTwoInput3" />
+                        <br />
+                        <br/>
+                        <button type="button" onclick="sumInput()">Click For Sum</button>
+                        <br />
+                        <div id="problemTwoOutput"></div>
+                        <br />
+                        <br />
+                        <lable>Number 1:</lable><input type="text" id="mProblemTwoInput1" />
+                        <br/>
+                        <lable>Number 2:</lable><input type="text" id="mProblemTwoInput2" />
+                        <br/>
+                        <lable>Number 3:</lable><input type="text" id="mProblemTwoInput3" />
+                        <br/>
+                        <br />
+                        <button type="button" onclick="multiplyInput()">Click For Multiplication Value</button>
+                        <br />
+                        <div id="mProblemTwoOutput"></div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="col-md-6">
+                        <pre class="brush: js; ruler: true;">
+                   
+                
+// Problem 2
+function sum(array) {
+    var sum = 0;
+    for (var counter = 0; counter < array.length; counter++) {
+        sum += array[counter];
+    }
+    
+    return sum;
+}
+function sumInput() {
+    
+    var number1 = document.getElementById("problemTwoInput1").value;
+    var number2 = document.getElementById("problemTwoInput2").value;
+    var number3 = document.getElementById("problemTwoInput3").value;
+    number1 = parseInt(number1);
+    number2 = parseInt(number2);
+    number3 = parseInt(number3);
+    document.getElementById("problemTwoOutput").innerHTML = sum([number1, number2, number3]);
+}
+function multiply(array) {
+    var multiply = 1;
+    for (var counter = 0; counter < array.length; counter++) {
+        multiply = (multiply * array[counter]);
+    }
+    return multiply;
+}
+function multiplyInput() {
+    var number1 = document.getElementById("mProblemTwoInput1").value;
+    var number2 = document.getElementById("mProblemTwoInput2").value;
+    var number3 = document.getElementById("mProblemTwoInput3").value;
+  
+    number1 = parseInt(number1);
+    number2 = parseInt(number2);
+    number3 = parseInt(number3);
+    
+    document.getElementById("mProblemTwoOutput").innerHTML = multiply([number1, number2, number3]);
+}
+                        </pre>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
+        Problem 3
+    </button>
+
+    <!-- Modal3 -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Problem Three - Factorial</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-6">
+                        <br/>
+                        <br/>
+                        <p>The factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. (i.e.  5! = 5 x 4 x 3 x 2 x 1 = 120). This function will find the factorial of any given number.</p>
+                        <br/>
+                        <br/>
+                        <lable> Enter the Number  :</lable><input type="text" length="8" id="txt1"><br>
+                        <br/>
+                        <input type="button" value="Find factiorial" onclick=" $('#txt1out').val( fact( $('#txt1').val() ) )">
+                        <br/>
+                        <br/>
+                        <lable> Factorial result  :</lable><input type="text" length="8" id="txt1out" disabled><br>
+                    </div>
+                    <div class="col-md-6">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <pre class="brush: js; ruler: true;">
+                                               function fact(num) {
+                                                    if (num < 0)
+                                                        return "Undefined";
+                                                    var fact = 1;
+                                                    for (var i = num; i > 1; i--)
+                                                        fact *= i;
+                                                        return fact;
+                                                    }                     
+                        </pre>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">
+        Problem 4
+    </button>
+
+    <!-- Modal4 -->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Problem Four - Palindrome</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-6">
+                        <br/>
+                        <br/>
+                        <p>This function computes the reversal of a string, returning true if the string is a palindrome (the same forwards and backwards – “radar” for example), and false if otherwise.</p>
+                        <br/>
+                        <lable>Check if word is a Palindrome:</lable><input type="text" id="palindromeIn" />
+                        <br />
+                        <button type="button" onclick="clickPal()">Click Me</button>
+                        <br />
+                        <div id="palindromeOut"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <br/>
+                        <br/>
+                        <pre class="brush: js; ruler: true;">
+                                              function palindrome(string) {
+                                                    var reverse = "";
+                                                for (var i = string.length - 1; i >= 0; i--) {
+                                                reverse += string[i];
+                                               }
+                                                if (string === reverse)
+                                                    return ("Entered string is a palindrome.");
+                                                else
+                                                    return ("Entered string is not a palindrome.");
+                                               }
+                                                function clickPal() {
+                                                    var word = document.getElementById("palindromeIn").value;
+                                                    document.getElementById("palindromeOut").innerHTML = palindrome(word);
+                                               }
+                                                document.write("<br />");
+                                        
+                        </pre>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal5">
+        Problem 5
+    </button>
+
+    <!-- Modal5 -->
+    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Problem Five - BuzzFizz</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-6">
+                        <br/>
+                        <br/>
+                        <p>This function iterates the integers from 1 to 100, printing the numbers to the screen. However, for each number that is a multiple of three you will see "Fizz" instead of the number. For multiples of five you will see "Buzz" instead of the number. For numbers that are multiples of both three and five you will see "FizzBuzz."</p>
+                        <br/>
+                        <br/>
+                        <lable>Input a number:</lable><input type="text" id="numberInput1" />
+                        <br />
+                        <br/>
+                        <lable>Input a larger number</lable><input type="text" id="numberInput2" />
+                        <br/>
+                        <br/>
+                        <button type="button" onclick="numberInput()">Click Me</button>
+                        <br />
+                        <div id="numberOutput" style="max-height:300px; overflow-y:auto;"></div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <br/>
+                        <br/>
+                        <br/>
+                        <pre class="brush: js; ruler: true;">
+                                        function printNumbers(a, b) {
+                                            var output = "";
+                                            for (var counter = a; counter <= b && (counter - a <= 100) ; counter++) {
+                                            if (counter % 15 == 0)
+                                                   output += "fizzbuzz<br />";
+                                            else if (counter % 3 == 0)
+                                                   output += "fizz<br />";
+                                            else if (counter % 5 == 0)
+                                                   output += "buzz<br />";
+                                            else
+                                                   output += counter + "<br />"
+                  
+                                        }
+                                        return output;
+                                    } 
+                                        function numberInput() {
+                                            var number1 = document.getElementById("numberInput1").value;
+                                            var number2 = document.getElementById("numberInput2").value;
+                                            number1 = parseInt(number1);
+                                            number2 = parseInt(number2);
+                                            document.getElementById("numberOutput").innerHTML = printNumbers(number1, number2);
+                                            }
+                                        
+                        </pre>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+             
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal6">
+        Problem 6
+    </button>
+    
+    <!-- Modal6 -->
+    <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Problem Six - Perfect Numbers</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-6">
+                         <br />
+                         <br />
+                         <p>In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself. The first perfect number is 6 – its positive divisors (excluding itself) are 1, 2, and 3, whose sum is 6.</p>
+                         <br/>
+                         <p>These functions will first determine whether a given number is perfect. Then display all perfect numbers between 1 and 10,000. </p>
+                         <br/>
+                         <br/>
+                         <lable>Number 1:</lable><input type="text" id="perfectInput1" />
+                         <br />
+                         <br/>
+                         <button type="button" onclick="perfectInput()">Click To See If Number Is Perfect</button>
+                         <br />
+                         <div id="perfectOutput"></div> 
+                         <br/>
+                         <br/>
+                         <button type="button" onclick="listPerfect()">Click to display all perfect numbers between 1 - 10,000</button>
+                         <div id="prob6out"></div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <br />
+                        <br />
+                        <br />
+                        <pre class="brush: js; ruler: true;">
+                                                                 // Problem 6
+                                                                    function is_perfect(number) {
+                                                                        var temp = 0;
+                                                                        for (var i = 1; i <= number / 2; i++) {
+                                                                            if (number % i === 0) {
+                                                                                temp += i;
+                                                                            }
+                                                                        }
+                                                                        if (temp === number) {
+                                                                            return ("It is a perfect number.");
+                                                                        }
+                                                                        else {
+                                                                            return ("It is not a perfect number.");
+                                                                        }
+                                                                        return is_perfect;
+                                                                    }
+                                                                    function perfectInput() {
+                                                                        var number1 = document.getElementById("perfectInput1").value;
+                                                                        number1 = parseInt(number1);
+                                                                        document.getElementById("perfectOutput").innerHTML = is_perfect(number1);
+                                                                    }
+                                                                    function isPerfect(n)
+                                                                    {
+                                                                        var sum = 1, i, sqrt=Math.floor(Math.sqrt(n));
+                                                                        for (i = sqrt-1; i>1; i--)
+                                                                        {
+                                                                            if (n % i == 0) {
+                                                                                sum += i + n/i;
+                                                                            }
+                                                                        }
+                                                                        if(n % sqrt == 0)
+                                                                            sum += sqrt + (sqrt*sqrt == n ? 0 : n/sqrt);
+                                                                        return sum === n;
+                                                                    }
+ 
+                                                                    var i;
+                                                                    function listPerfect() {
+                                                                        $('#prob6out').html('');
+                                                                        for (i = 1; i < 10000; i++)
+                                                                        {
+                                                                            if (isPerfect(i))
+                                                                                $('#prob6out').append(i + " ");
+            
+                                                                        }
+                                                                    }
+                                                                    document.write("<br />");
+
+                                        
+                        </pre>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal7">
+        Problem 7
+    </button>
+
+    <!-- Modal7 -->
+    <div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Problem Seven - Happy Numbers</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-6">
+                        <br />
+                        <br />
+                        <p>Happy numbers are those that can be reduced to 1 through the following process – Start with any positive integer, replace the number with the sum of the squares of its digits, and repeat until the result is 1 or the result is an endless loop.</p>
+                        <br/>
+                        <p>This function will display the first 5 happy numbers.</p>
+                        <br />
+                        <button type="button" onclick="listHappy()">Click to display the first 5 happy numbers</button>
+                        <div id="prob7out"></div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <br />
+                        <br />
+                        <br />
+                        <pre class="brush: js; ruler: true;">
+function happy(number) {
+    var m, digit;
+    var cycle = [];
+    while (number != 1 && cycle[number] !== true) {
+        cycle[number] = true;
+        m = 0;
+        while (number > 0) {
+            digit = number % 10;
+            m += digit * digit;
+            number = (number - digit) / 10;
+        }
+        number = m;
+    }
+    return (number == 1);
+}
+var cnt = 5;
+var number = 1;
+function listHappy() {
+    $('#prob7out').html('');
+    while (cnt-- > 0) {
+        while (!happy(number))
+            number++;
+       $('#prob7out').append(number + "<br />");
+        number++;
+    }
+}
+document.write("<br />")
+
+
+                                        
+                        </pre>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal8">
+        Problem 8
+    </button>
+
+    <!-- Modal8 -->
+    <div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Problem Eight - Armstrong Numbers</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-6">
+                        <br />
+                        <br />
+                        <p>An Armstrong number is an integer such that the sum of the cubes of its digits is equal to the number itself. (i.e. 371 is an Armstrong number since 33 + 73 + 13 = 371.</p>
+                        <br/>
+                        <p>This function will display all three-digit armstrong numbers.</p>
+                        <br />
+                        <button type="button" onclick="three_digit_armstrong_number()">Click to display all three digit armstrong numbers</button>
+                        <br/>
+                        <div id="prob8out"></div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <br />
+                        <br />
+                        <br />
+                        <pre class="brush: js; ruler: true;">
+function three_digit_armstrong_number() {
+    $('#prob8out').html('');
+    for (var i = 1; i < 10; ++i) {
+        for (var j = 0; j < 10; ++j) {
+            for (var k = 0; k < 10; ++k) {
+                var pow = (Math.pow(i, 3) + Math.pow(j, 3) + Math.pow(k, 3));
+                var plus = (i * 100 + j * 10 + k);
+                if (pow == plus) {
+                    $('#prob8out').append(pow + " ");
+                }
+            }
+        }
+    }
+}
+                        </pre>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <br />
+    <br />
+  
+    <br/>
+    <br/>
+
+   
+    
+    
+    
+
+    <script src="Scripts/jquery-2.1.3.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/problem1.js"></script>
+    <script src="Scripts/problem2.js"></script>
+    <script src="Scripts/problem3.js"></script>
+    <script src="Scripts/problem4.js"></script>
+    <script src="Scripts/problem5.js"></script>
+    <script src="Scripts/problem6.js"></script>
+    <script src="Scripts/problem7.js"></script>
+    <script src="Scripts/problem8.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+    </script>
+</body>
+</html>
