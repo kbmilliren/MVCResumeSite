@@ -40,6 +40,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SendGrid.SmtpApi">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.2.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\Sendgrid.5.1.0\lib\SendGridMail.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -164,12 +170,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JavaScriptController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ContactMessage.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -194,6 +202,7 @@
     <Content Include="img\about\4.jpg" />
     <Content Include="img\banner-bg.jpg" />
     <Content Include="img\header-bg.jpg" />
+    <Content Include="img\javascript-icon.png" />
     <Content Include="img\logos\16-logo.jpg" />
     <Content Include="img\logos\aetuts.jpg" />
     <Content Include="img\logos\creative-market.jpg" />
@@ -202,6 +211,7 @@
     <Content Include="img\logos\microlancer.jpg" />
     <Content Include="img\logos\themeforest.jpg" />
     <Content Include="img\logos\wordpress.jpg" />
+    <Content Include="img\logo_JavaScript.png" />
     <Content Include="img\map-image.png" />
     <Content Include="img\portfolio\dreams-preview.png" />
     <Content Include="img\portfolio\dreams.png" />
@@ -262,6 +272,8 @@
     <Content Include="font-awesome\scss\_spinning.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
+    <None Include="Properties\PublishProfiles\millirenb - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\millirenb - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -315,7 +327,26 @@
     <Content Include="Scripts\shCore.js" />
     <Content Include="Scripts\shLegacy.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="styles\shCore.css" />
+    <Content Include="styles\shCoreDefault.css" />
+    <Content Include="styles\shCoreDjango.css" />
+    <Content Include="styles\shCoreEclipse.css" />
+    <Content Include="styles\shCoreEmacs.css" />
+    <Content Include="styles\shCoreFadeToGrey.css" />
+    <Content Include="styles\shCoreMDUltra.css" />
+    <Content Include="styles\shCoreMidnight.css" />
+    <Content Include="styles\shCoreRDark.css" />
+    <Content Include="styles\shThemeDefault.css" />
+    <Content Include="styles\shThemeDjango.css" />
+    <Content Include="styles\shThemeEclipse.css" />
+    <Content Include="styles\shThemeEmacs.css" />
+    <Content Include="styles\shThemeFadeToGrey.css" />
+    <Content Include="styles\shThemeMDUltra.css" />
+    <Content Include="styles\shThemeMidnight.css" />
+    <Content Include="styles\shThemeRDark.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -356,6 +387,7 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Team\Index.cshtml" />
     <Content Include="Views\JavaScript\Index.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

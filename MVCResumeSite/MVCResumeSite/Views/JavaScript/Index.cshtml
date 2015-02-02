@@ -3,93 +3,21 @@
     ViewBag.Title = "JavaScript";
 }
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+<script src="/Scripts/shBrushJScript.js"></script>
 
+<link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/styles/shThemeMidnight.css" rel="stylesheet" />
+<link href="/styles/shCore.css" rel="stylesheet" />
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/agency.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-    <title>JavaScript Examples</title>
-    <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
-    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
-    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
-    <script src="Scripts/shBrushJScript.js"></script>
-    <link href="Styles/shThemeMidnight.css" rel="stylesheet" />
-    <link href="Styles/shCore.css" rel="stylesheet" />
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="/Home">Bryant Milliren</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="http://millirenb.azurewebsites.net/#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="http://millirenb.azurewebsites.net/#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="http://millirenb.azurewebsites.net/#team">Who I Am</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="http://millirenb.azurewebsites.net/#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a href="jsprobs.html">Javascript Exercises</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <script>
-
-    </script>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+<br />
+<br />
+<br />
+<div class="container" style="margin-top:75px;">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Problem 1
+        Max of Three
     </button>
 
     <!-- Modal1 -->
@@ -107,21 +35,32 @@
                         <p>This function takes 3 numbers and returns the highest value.</p>
                         <br />
                         <br />
-                        <p>Click the button to return the highest number of 5, 15, 10.</p>
-
-                        <button onclick="maxOfThree()">Click For Highest Value</button>
-
-                        <p id="max"></p>
+                        <lable>Number 1: </lable><input type="text" id="problemOneInput1" />
+                        <br />
+                        <br />
+                        <lable>Number 2: </lable><input type="text" id="problemOneInput2" />
+                        <br />
+                        <br />
+                        <lable>Number 3: </lable><input type="text" id="problemOneInput3" />
+                        <br />
+                        <br />
+                        <button type="button" onclick="maxInput()">Click For Max</button>
+                        <br />
+                        <div id="max"></div>
                     </div>
                     <div class="col-md-6">
                         <br />
                         <br />
                         <pre class="brush: js; ruler: true;">
                     
-                function maxOfThree() {
-                     document.getElementById("max").innerHTML = Math.max(5, 10, 15);
-                
-                }
+                                      function maxInput() {
+                                        var number1 = document.getElementById("problemOneInput1").value;
+                                        var number2 = document.getElementById("problemOneInput2").value;
+                                        var number3 = document.getElementById("problemOneInput3").value;
+                                        number1 = parseInt(number1);
+                                        number2 = parseInt(number2);
+                                        number3 = parseInt(number3);
+                                        document.getElementById("max").innerHTML = Math.max(number1, number2, number3);
                         </pre>
                     </div>
                 </div>
@@ -136,7 +75,7 @@
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
-        Problem 2
+        Sum and Multiplication
     </button>
 
     <!-- Modal2 -->
@@ -236,7 +175,7 @@ function multiplyInput() {
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
-        Problem 3
+        Factorial
     </button>
 
     <!-- Modal3 -->
@@ -289,7 +228,7 @@ function multiplyInput() {
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">
-        Problem 4
+        Palindrome
     </button>
 
     <!-- Modal4 -->
@@ -347,7 +286,7 @@ function multiplyInput() {
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal5">
-        Problem 5
+        Fizz Buzz
     </button>
 
     <!-- Modal5 -->
@@ -419,7 +358,7 @@ function multiplyInput() {
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal6">
-        Problem 6
+        Perfect Numbers
     </button>
 
     <!-- Modal6 -->
@@ -518,7 +457,7 @@ function multiplyInput() {
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal7">
-        Problem 7
+        Happy Numbers
     </button>
 
     <!-- Modal7 -->
@@ -589,7 +528,7 @@ document.write("<br />")
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal8">
-        Problem 8
+        Armstrong Numbers
     </button>
 
     <!-- Modal8 -->
@@ -650,24 +589,18 @@ function three_digit_armstrong_number() {
     <br />
     <br />
 
-
-
-
-
-
-    <script src="Scripts/jquery-2.1.3.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/problem1.js"></script>
-    <script src="Scripts/problem2.js"></script>
-    <script src="Scripts/problem3.js"></script>
-    <script src="Scripts/problem4.js"></script>
-    <script src="Scripts/problem5.js"></script>
-    <script src="Scripts/problem6.js"></script>
-    <script src="Scripts/problem7.js"></script>
-    <script src="Scripts/problem8.js"></script>
+    <script src="/Scripts/problem1.js"></script>
+    <script src="/Scripts/problem2.js"></script>
+    <script src="/Scripts/problem3.js"></script>
+    <script src="/Scripts/problem4.js"></script>
+    <script src="/Scripts/problem5.js"></script>
+    <script src="/Scripts/problem6.js"></script>
+    <script src="/Scripts/problem7.js"></script>
+    <script src="/Scripts/problem8.js"></script>
 
     <script>
         SyntaxHighlighter.all();
     </script>
-</body>
-</html>
+
+</div>
+  
