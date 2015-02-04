@@ -1,0 +1,56 @@
+﻿@model MVCResumeSite.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<br />
+<br />
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    
+ 
+    <article>
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+                <h1>@Html.DisplayFor(model => model.Title)</h1>
+                <h2 class="subheading">@Html.DisplayFor(model => model.Slug)</h2>
+                <span class="meta">@Html.DisplayFor(model => model.DateCreated)</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>
+                        @Html.DisplayFor(model => model.Body)
+                    </p>
+                    
+                    <h2 class="section-heading"></h2>
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </article>
+    <hr>
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+</body>
+</html>
+
