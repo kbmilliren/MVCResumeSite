@@ -1,9 +1,12 @@
 namespace MVCResumeSite.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+    using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using MVCResumeSite.Models;
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MVCResumeSite.Models.ApplicationDbContext>
     {
@@ -15,18 +18,26 @@ namespace MVCResumeSite.Migrations
 
         protected override void Seed(MVCResumeSite.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+           var rm = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+           if (!context.Roles.Any(r => r.Name == "Admin"))
+               rm.Create(new IdentityRole { Name = "Admin" });
+
+           var um = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+           var I = context.Users.FirstOrDefault(u => u.Email == "kbmilliren@northstate.net");
+
+            if (I == null)
+                um.Create(new ApplicationUser
+            {
+                UserName = "kbmilliren@northstate.net",
+                Email = "kbmilliren@northstate.net",
+                FirstName = "Bryant",
+                LastName = "Milliren"
+            }, "Std982582!");
+
+            var My = um.FindByEmail("kbmilliren@northstate.net");
+            if(um.IsInRole(My.Id, "Admin"))
+            um.AddToRole(My.Id, "Admin");
         }
     }
 }

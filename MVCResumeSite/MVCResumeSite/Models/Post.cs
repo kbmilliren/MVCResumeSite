@@ -17,6 +17,7 @@ namespace MVCResumeSite.Models
         [AllowHtml]
         public string Body { get; set; }
         public string MediaUrl { get; set; }
+        public bool Published { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
 
         public Post()
