@@ -193,6 +193,8 @@
     <Content Include="css\agency.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\clean-blog.css" />
+    <Content Include="css\clean-blog.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
@@ -206,6 +208,7 @@
     <Content Include="img\about\4.jpg" />
     <Content Include="img\banner-bg.jpg" />
     <Content Include="img\header-bg.jpg" />
+    <Content Include="img\home-bg.jpg" />
     <Content Include="img\javascript-icon.png" />
     <Content Include="img\logos\16-logo.jpg" />
     <Content Include="img\logos\aetuts.jpg" />
@@ -229,10 +232,14 @@
     <Content Include="img\portfolio\startup-framework.png" />
     <Content Include="img\portfolio\treehouse-preview.png" />
     <Content Include="img\portfolio\treehouse.png" />
+    <Content Include="img\post-bg.jpg" />
+    <Content Include="img\post-sample-image.jpg" />
     <Content Include="img\team\1.jpg" />
     <Content Include="img\team\2.jpg" />
     <Content Include="img\team\3.jpg" />
     <Content Include="img\team\IMG_3933.png" />
+    <Content Include="img\whyblog2.jpg" />
+    <Content Include="index - Copy.html" />
     <Content Include="index.html" />
     <Content Include="jsprobs.html" />
     <Content Include="js\agency.js" />
@@ -241,9 +248,12 @@
     <Content Include="js\cbpAnimatedHeader.js" />
     <Content Include="js\cbpAnimatedHeader.min.js" />
     <Content Include="js\classie.js" />
+    <Content Include="js\clean-blog.js" />
+    <Content Include="js\clean-blog.min.js" />
     <Content Include="js\contact_me.js" />
     <Content Include="js\jqBootstrapValidation.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />

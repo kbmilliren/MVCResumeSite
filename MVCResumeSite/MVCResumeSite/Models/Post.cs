@@ -13,6 +13,7 @@ namespace MVCResumeSite.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Slug { get; set; }
+        public string Subject { get; set; }
         [DisplayFormat( DataFormatString="{0:dd/MM/yy}", ApplyFormatInEditMode=true )]
         public DateTimeOffset DateCreated { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd/MM/yy}", ApplyFormatInEditMode = true)]
@@ -23,7 +24,6 @@ namespace MVCResumeSite.Models
         public string MediaUrl { get; set; }
         public bool Published { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
-
         public Post()
         {
             Comments = new HashSet<Comment>();

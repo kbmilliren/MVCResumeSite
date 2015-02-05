@@ -11,7 +11,7 @@ namespace MVCResumeSite.Models
         public DateTimeOffset DateCreated { get; set; }
         public DateTimeOffset DateUpdated { get; set; }
         public string UpdateReason { get; set; }
-        public string Body { get; set; }
+        public string Message { get; set; }
         public int PostId { get; set; }
         public string AuthorId { get; set; }
 

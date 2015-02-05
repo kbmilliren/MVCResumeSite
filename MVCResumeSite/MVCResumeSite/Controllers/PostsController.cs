@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCResumeSite.Models;
+using Microsoft.AspNet.Identity;
 
 namespace MVCResumeSite.Controllers
 {
@@ -123,5 +124,25 @@ namespace MVCResumeSite.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Comment([Bind(Include = "PostId, Message")] Comment comment)
+        {
+            if (ModelState.IsValid)
+            {
+                comment.AuthorId = User.Identity.GetUserId();
+                comment.DateCreated = System.DateTimeOffset.Now;
+                db.Comments.Add(comment);
+                db.SaveChanges();
+                return RedirectToAction("Details", new { id = comment.PostId });
+            }
+
+            return View(comment);
+        }
     }
+
+
 }
