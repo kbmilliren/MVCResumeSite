@@ -8,6 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using MVCResumeSite.Models;
 using Microsoft.AspNet.Identity;
+using PagedList;
+using PagedList.Mvc;
+
 
 namespace MVCResumeSite.Controllers
 {
@@ -16,11 +19,24 @@ namespace MVCResumeSite.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Posts
-        public ActionResult Index()
+        [Authorize(Roles="Admin")]    
+        public ActionResult AdminIndex()
         {
             return View(db.Posts.ToList());
         }
 
+        public ActionResult Index(int? page, string query)
+        {
+            var posts = db.Posts.AsQueryable();
+            if (!String.IsNullOrWhiteSpace(query))
+            {
+                posts = posts.Where(p => p.Title.Contains(query) || p.Body.Contains(query));
+                ViewBag.Query = query;
+
+            }
+            posts = posts.OrderByDescending(p => p.DateCreated);
+                return View(posts.ToPagedList(page ?? 1, 3));
+        }
         // GET: Posts/Details/5
         public ActionResult Details(int? id)
         {

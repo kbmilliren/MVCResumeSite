@@ -869,7 +869,7 @@ img::-moz-selection {
 }
 
 body 
-    webkit-tap-highlight-color: #76A9FE;{
+    webkit-tap-highlight-color #76A9FE{
 
 }
 
@@ -889,4 +889,8 @@ body
 
 .shoppingcart-background {
     color: #76A9FE;
+}
+
+.bodyText {
+    height: 4em;
 }
