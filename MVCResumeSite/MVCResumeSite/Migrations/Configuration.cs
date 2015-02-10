@@ -36,8 +36,8 @@ using System.Linq;
             }, "Std982582!");
 
             var My = um.FindByEmail("kbmilliren@northstate.net");
-            if(um.IsInRole(My.Id, "Admin"))
-            um.AddToRole(My.Id, "Admin");
+            if(!um.IsInRole(My.Id, "Admin"))
+                um.AddToRole(My.Id, "Admin");
         }
     }
 }

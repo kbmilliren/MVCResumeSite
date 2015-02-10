@@ -52,7 +52,8 @@ namespace MVCResumeSite.Controllers
             return View(post);
         }
 
-        // GET: Posts/Create
+        // GET: Posts/Create  
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -62,7 +63,7 @@ namespace MVCResumeSite.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "Id,Title,Slug,DateCreated,DateUpdated,Body,MediaUrl,Published")] Post post)
         {
             if (ModelState.IsValid)
@@ -76,6 +77,7 @@ namespace MVCResumeSite.Controllers
         }
 
         // GET: Posts/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -94,7 +96,7 @@ namespace MVCResumeSite.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]    
         public ActionResult Edit([Bind(Include = "Id,Title,Slug,DateCreated,DateUpdated,Body,MediaUrl,Published")] Post post)
         {
             if (ModelState.IsValid)
@@ -107,6 +109,7 @@ namespace MVCResumeSite.Controllers
         }
 
         // GET: Posts/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -123,7 +126,6 @@ namespace MVCResumeSite.Controllers
 
         // POST: Posts/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Post post = db.Posts.Find(id);
