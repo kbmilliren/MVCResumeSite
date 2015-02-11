@@ -271,9 +271,9 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../img/header-bg.jpg);
+    background-image: url(../img/banner-bg.jpg);
     background-position: center center;
-    background-repeat: none;
+    background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -893,4 +893,12 @@ body
 
 .bodyText {
     height: 4em;
+}
+
+.no-link {
+    text-decoration:none!important;
+}
+
+.no-link:hover, .no-link:active {
+    color: #0094ff;
 }

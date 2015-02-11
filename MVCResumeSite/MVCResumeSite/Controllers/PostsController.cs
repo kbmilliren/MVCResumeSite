@@ -10,6 +10,7 @@ using MVCResumeSite.Models;
 using Microsoft.AspNet.Identity;
 using PagedList;
 using PagedList.Mvc;
+using System.IO;
 
 
 namespace MVCResumeSite.Controllers
@@ -64,16 +65,48 @@ namespace MVCResumeSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public ActionResult Create([Bind(Include = "Id,Title,Slug,DateCreated,DateUpdated,Body,MediaUrl,Published")] Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,Slug,DateCreated,DateUpdated,Body,MediaUrl,Published")] Post post, HttpPostedFileBase image )
         {
             if (ModelState.IsValid)
+            {
+                if (image != null)
+                {
+                    if (image.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(image.FileName);
+                    var fileExtension = Path.GetExtension(fileName);
+                    if ((fileExtension == ".jpg") || (fileExtension == ".gif") || (fileExtension == ".png"))
+                    {
+                        var path = Server.MapPath("~/img/Blog/");
+                        if (!Directory.Exists(path))
+                        {
+                            Directory.CreateDirectory(path);
+                        }
+                        post.MediaUrl = "/img/Blog/" + fileName;
+
+                        image.SaveAs(Path.Combine(path, fileName));
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("image", "Invalid image extension. Only .jpg, gif, png");
+                        return View(post);
+                    }
+
+                }
+                }
+                
+            
+           
             {
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            }
+            post.DateCreated = DateTimeOffset.Now.Date;
+            post.DateUpdated = DateTimeOffset.Now.Date;
             return View(post);
+            
         }
 
         // GET: Posts/Edit/5
