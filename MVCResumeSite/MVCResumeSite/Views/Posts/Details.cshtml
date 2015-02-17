@@ -58,16 +58,14 @@
 
 
         <article>
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h2 class="subheading">@Html.DisplayFor(model => model.Slug)</h2>
-                </div>
-            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <h2>@Html.DisplayFor(model => model.Title)</h2>
-                        <h4>Posted by Bryant Milliren @Html.DisplayFor(model => model.DateCreated)</h4>
+                        <h4>Posted by Bryant Milliren @Model.DateCreated.DateTime.ToLongDateString()</h4>
+                        <img src="@Model.MediaUrl" class="img-responsive" align="middle"/>
+                        <br/>
+                      
                           @Html.Raw(Model.Body)
                     
 

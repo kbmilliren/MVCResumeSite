@@ -31,7 +31,11 @@
 
 
 <!-- Page Header -->
-
+<div class="container">
+    <div class="row">
+        @Html.ActionLink("Create", "Create") <br />
+    </div>
+</div>
 
 <div class="container">
     <!-- /.input-group -->
@@ -39,24 +43,27 @@
         <div class="col-md-8">
             @foreach (var item in Model)
             {
-                <a href="@Url.Action("Details", new { id=item.Id })" class="no-link">
+                <a href="@Url.Action("Details", new { Slug=item.Slug })" class="no-link">
                     <h3 class="post-title">
                         @Html.DisplayFor(modelItem => item.Title)
                     </h3>
+                    <p class="post-meta">Posted by Bryant Milliren @item.DateCreated.DateTime.ToLongDateString()</p>
                     <div class="bodyText">
                         @Html.Raw(item.Body)
 
                     </div>
-                    <img src="@item.MediaUrl" class="img-responsive" />
+                    <br/>
+                    <br/>
+                    <img src="@item.MediaUrl" class="img-responsive"/>
                     <p>
                         @if (User.IsInRole("Admin"))
                         {
+                            
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) <br />
                             @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                         }
 
                     </p>
-                    <p class="post-meta">Posted by Bryant Milliren @item.DateCreated.DateTime.ToLongDateString()</p>
                 </a>
             }
             <hr>

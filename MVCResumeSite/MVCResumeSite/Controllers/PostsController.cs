@@ -23,6 +23,8 @@ namespace MVCResumeSite.Controllers
         [Authorize(Roles="Admin")]    
         public ActionResult AdminIndex()
         {
+            var posts = db.Posts.ToList();
+            posts.ForEach(p => p.Slug = StringUtilities.URLFriendly(p.Title));
             return View(db.Posts.ToList());
         }
 
@@ -39,13 +41,13 @@ namespace MVCResumeSite.Controllers
                 return View(posts.ToPagedList(page ?? 1, 3));
         }
         // GET: Posts/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string Slug)
         {
-            if (id == null)
+            if (String.IsNullOrWhiteSpace(Slug))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Find(id);
+            Post post = db.Posts.FirstOrDefault(p=>p.Slug == Slug);
             if (post == null)
             {
                 return HttpNotFound();
@@ -69,6 +71,12 @@ namespace MVCResumeSite.Controllers
         {
             if (ModelState.IsValid)
             {
+                var Slug = StringUtilities.URLFriendly(post.Title);
+                if(db.Posts.Any(p => p.Slug == Slug))
+                {
+                    ModelState.AddModelError("Title", "The title must be unique.");
+                    return View(post);
+                }
                 if (image != null)
                 {
                     if (image.ContentLength > 0)
@@ -94,14 +102,12 @@ namespace MVCResumeSite.Controllers
 
                 }
                 }
-                
-            
-           
-            {
+                post.Slug = Slug;
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            }
+                
+            
             }
             post.DateCreated = DateTimeOffset.Now.Date;
             post.DateUpdated = DateTimeOffset.Now.Date;
@@ -188,7 +194,7 @@ namespace MVCResumeSite.Controllers
                 comment.DateCreated = System.DateTimeOffset.Now;
                 db.Comments.Add(comment);
                 db.SaveChanges();
-                return RedirectToAction("Details", new { id = comment.PostId });
+                return RedirectToAction("Details", new { Slug = comment.Post.Slug });
             }
 
             return View(comment);
