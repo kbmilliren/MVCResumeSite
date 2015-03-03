@@ -14,16 +14,17 @@ namespace MVCResumeSite
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+               name: "New Slug",
+               url: "Blog/{slug}",
+               defaults: new { controller = "Posts", action = "Details", slug = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
-            routes.MapRoute(
-               name: "New Slug",
-               url: "Blog/{slug}",
-               defaults: new { controller = "Posts", action = "Details", slug = UrlParameter.Optional }
-            );
         }
     }
 }
