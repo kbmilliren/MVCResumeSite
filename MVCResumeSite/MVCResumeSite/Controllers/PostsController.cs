@@ -194,6 +194,7 @@ namespace MVCResumeSite.Controllers
                 comment.DateCreated = System.DateTimeOffset.Now;
                 db.Comments.Add(comment);
                 db.SaveChanges();
+                db.Entry(comment).Reference(p => p.Post).Load();
                 return RedirectToAction("Details", new { Slug = comment.Post.Slug });
             }
 
